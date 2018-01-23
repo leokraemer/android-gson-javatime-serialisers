@@ -7,7 +7,7 @@ Particularly useful to use in Android projects.
 
 ## Getting it
 
-using see [jitpack][4]
+using [jitpack][4]
 
 add 
 ````
