@@ -11,7 +11,7 @@ using [jitpack][4]
 
 add 
 ````
-implementation 'com.github.leokraemer:gson-javatime-serialisers:2.1.1'
+implementation 'com.github.leokraemer:gson-javatime-serialisers:2.1.2'
 ````
 to your build.gradle
 
