@@ -33,4 +33,4 @@ Unrelated to `gson-javatime-serialisers` itself, but if you're working with Java
 [1]: https://code.google.com/p/google-gson/
 [2]: http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
 [3]: https://github.com/spencerwi/hamcrest-jdk8-time
-[4]: https://jitpack.io/
+[4]: https://jitpack.io/#leokraemer/gson-javatime-serialisers/2.1.2
