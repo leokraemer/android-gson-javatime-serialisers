@@ -14,7 +14,7 @@ use [jitpack][4]
 TLDR;
 add 
 ````
-implementation 'com.github.leokraemer:gson-javatime-serialisers:2.1.2'
+implementation 'com.github.leokraemer:android-gson-javatime-serialisers:2.1.2'
 ````
 to your build.gradle
 
@@ -32,5 +32,5 @@ final OffsetDateTime reconstituted = gson.fromJson(json, OffsetDateTime.class);
 [1]: https://code.google.com/p/google-gson/
 [2]: http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
 [3]: https://github.com/spencerwi/hamcrest-jdk8-time
-[4]: https://jitpack.io/#leokraemer/gson-javatime-serialisers/2.1.2
+[4]: https://jitpack.io/#leokraemer/android-gson-javatime-serialisers/2.1.2
 [5]: https://github.com/JakeWharton/ThreeTenABP
