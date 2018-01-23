@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="gson-javatime-serialisers" target="1.8" />
+      <module name="gson-javatime-serialisers" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
