@@ -2,17 +2,17 @@
 
 ## What is it?
 
-A set of [GSON][1] serialiser/deserialisers for dealing with [Java 8 `java.time` entities][2].  Wherever possible, [ISO 8601 string representations](http://en.wikipedia.org/wiki/ISO_8601) are used.
+A set of [GSON][1] serialiser/deserialisers for dealing with [Java 8 `java.time` entities][2]. Portet to use org.threeten.bp.  Wherever possible, [ISO 8601 string representations](http://en.wikipedia.org/wiki/ISO_8601) are used.
+Particularly useful to use in Android projects.
 
 ## Getting it
 
+using see [jitpack][4]
+add 
 ````
-<dependency>
-  <groupId>com.fatboyindustrial.gson-javatime-serialisers</groupId>
-  <artifactId>gson-javatime-serialisers</artifactId>
-  <version>1.1.1</version>
-</dependency>
+implementation 'com.github.leonardkraemer:gson-javatime-serialisers:8c06d7a'
 ````
+to your build.gradle
 
 ## Using it
 
@@ -32,3 +32,4 @@ Unrelated to `gson-javatime-serialisers` itself, but if you're working with Java
 [1]: https://code.google.com/p/google-gson/
 [2]: http://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
 [3]: https://github.com/spencerwi/hamcrest-jdk8-time
+[4]: https://jitpack.io/
