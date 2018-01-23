@@ -23,17 +23,13 @@
 
 package com.fatboyindustrial.gsonjavatime;
 
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParseException;
-import com.google.gson.JsonPrimitive;
-import com.google.gson.JsonSerializationContext;
-import com.google.gson.JsonSerializer;
+import com.google.gson.*;
 
 import java.lang.reflect.Type;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.format.DateTimeFormatter;
+import org.threeten.bp.temporal.TemporalAccessor;
+import org.threeten.bp.temporal.TemporalQuery;
 
 /**
  * GSON serialiser/deserialiser for converting {@link LocalDateTime} objects.
@@ -82,6 +78,13 @@ public class LocalDateTimeConverter implements JsonSerializer<LocalDateTime>, Js
   public LocalDateTime deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
       throws JsonParseException
   {
-    return FORMATTER.parse(json.getAsString(), LocalDateTime::from);
+    return FORMATTER.parse(json.getAsString(), tq);
   }
+
+  private TemporalQuery<LocalDateTime> tq = new TemporalQuery<LocalDateTime>() {
+    @Override
+    public LocalDateTime queryFrom(TemporalAccessor temporal) {
+      return LocalDateTime.from(temporal);
+    }
+  };
 }

@@ -23,17 +23,13 @@
 
 package com.fatboyindustrial.gsonjavatime;
 
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParseException;
-import com.google.gson.JsonPrimitive;
-import com.google.gson.JsonSerializationContext;
-import com.google.gson.JsonSerializer;
+import com.google.gson.*;
 
 import java.lang.reflect.Type;
-import java.time.Instant;
-import java.time.format.DateTimeFormatter;
+import org.threeten.bp.Instant;
+import org.threeten.bp.format.DateTimeFormatter;
+import org.threeten.bp.temporal.TemporalAccessor;
+import org.threeten.bp.temporal.TemporalQuery;
 
 /**
  * GSON serialiser/deserialiser for converting {@link Instant} objects.
@@ -81,6 +77,13 @@ public class InstantConverter implements JsonSerializer<Instant>, JsonDeserializ
   @Override
   public Instant deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException
   {
-    return FORMATTER.parse(json.getAsString(), Instant::from);
+    return FORMATTER.parse(json.getAsString(), tq);
   }
+
+  private TemporalQuery<Instant> tq = new TemporalQuery<Instant>() {
+    @Override
+    public Instant queryFrom(TemporalAccessor temporal) {
+      return Instant.from(temporal);
+    }
+  };
 }

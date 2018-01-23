@@ -29,7 +29,7 @@ import com.google.gson.reflect.TypeToken;
 import org.junit.Test;
 
 import java.lang.reflect.Type;
-import java.time.LocalTime;
+import org.threeten.bp.LocalTime;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;

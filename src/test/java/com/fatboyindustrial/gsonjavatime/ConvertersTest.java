@@ -29,15 +29,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import org.junit.Test;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
-import java.time.OffsetTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
+import org.threeten.bp.Instant;
+import org.threeten.bp.LocalDate;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.LocalTime;
+import org.threeten.bp.OffsetDateTime;
+import org.threeten.bp.OffsetTime;
+import org.threeten.bp.ZoneId;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.ZonedDateTime;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;

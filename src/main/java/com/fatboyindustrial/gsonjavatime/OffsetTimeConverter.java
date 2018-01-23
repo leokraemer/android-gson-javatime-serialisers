@@ -23,17 +23,13 @@
 
 package com.fatboyindustrial.gsonjavatime;
 
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParseException;
-import com.google.gson.JsonPrimitive;
-import com.google.gson.JsonSerializationContext;
-import com.google.gson.JsonSerializer;
+import com.google.gson.*;
 
 import java.lang.reflect.Type;
-import java.time.OffsetTime;
-import java.time.format.DateTimeFormatter;
+import org.threeten.bp.OffsetTime;
+import org.threeten.bp.format.DateTimeFormatter;
+import org.threeten.bp.temporal.TemporalAccessor;
+import org.threeten.bp.temporal.TemporalQuery;
 
 /**
  * GSON serialiser/deserialiser for converting {@link OffsetTime} objects.
@@ -82,6 +78,13 @@ public class OffsetTimeConverter implements JsonSerializer<OffsetTime>, JsonDese
   public OffsetTime deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
       throws JsonParseException
   {
-    return FORMATTER.parse(json.getAsString(), OffsetTime::from);
+    return FORMATTER.parse(json.getAsString(), tq);
   }
+
+  private TemporalQuery<OffsetTime> tq = new TemporalQuery<OffsetTime>() {
+    @Override
+    public OffsetTime queryFrom(TemporalAccessor temporal) {
+      return OffsetTime.from(temporal);
+    }
+  };
 }
