@@ -8,6 +8,7 @@ Particularly useful to use in Android projects.
 ## Getting it
 
 using see [jitpack][4]
+
 add 
 ````
 implementation 'com.github.leonardkraemer:gson-javatime-serialisers:8c06d7a'
